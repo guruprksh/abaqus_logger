@@ -28,6 +28,23 @@ pip install -e .
 
 Inside Abaqus/CAE, copy `abaqus_logger.py` next to your script (or add its folder to `sys.path`).
 
+## Example
+
+See [examples/basic_usage.py](examples/basic_usage.py). Output:
+
+```
+===================    INIT    ===================
+Init | INFO    | Target dir: X     | 0.0
+Load | SUCCESS | Matched 120 nodes | 0.0
+--------------------------------------------------
+```
+
+## Tests
+
+```
+python -m unittest discover tests
+```
+
 ## API
 
 - `SimpleLogger(model_name, work_dir, log_name=None, overwrite=True)`
@@ -37,3 +54,7 @@ Inside Abaqus/CAE, copy `abaqus_logger.py` next to your script (or add its folde
 - `save()` - write the aligned table to `<log_name>_log.txt` in `work_dir`
 
 If `log_name` is not given, the Abaqus CAE file name is used, then the calling script name, then `unsaved_model`.
+
+## License
+
+MIT - see [LICENSE](LICENSE).
